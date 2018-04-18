@@ -24,20 +24,10 @@ public class Main {
 		button.setText("Convert");
 		textBinary.setText("                                                              ");
 		Convertor convertor = new Convertor();
-// В таком варианте обработки стайл чек требует записать это как лямбда-выражение
-//		Listener listener = new Listener() {
-//			@Override
-//			public void handleEvent(Event event) {
-//				textBinary.setText(convertor.convert(Integer.parseInt(textDecimal.getText())));	
-//			}
-//			
-//		};
-
-// для закомментриванной функции: button.addListener(SWT.MouseDown, listener);		
+	
 		button.addListener(SWT.MouseDown, event -> 
 				textBinary.setText(convertor.convert(Integer.parseInt(textDecimal.getText()))));
 		shell.open();
-// это обработка закрытия окна
 		while (!shell.isDisposed())
 			if (!display.readAndDispatch())
 				display.sleep();
